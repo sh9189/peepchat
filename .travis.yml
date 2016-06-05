@@ -1,22 +1,23 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - npm install phantomjs-prebuilt
-
+- npm config set spin false
+- npm install -g bower
+- npm install phantomjs-prebuilt
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: PdazPaFBV/sV8mGVJThL8CH6hOryZHYhlMD7PyiqzLOgljWusrKQLONNrI9kpuI38IWNwLVO0XbkAZqYY73ZAOyLlaVhpxiHw+8tsY676lZdGt0NmJscgQHZKUYrxnxuIPGoUmUVRmHTvtD+eRnec2g7jGqSwyepSeLkTm5ga7aRE5u1FZ+pBkKboEYi3HA005DPCzrKWnk0aVAQeLg2c+6D5R3EsuE/N7bIAysVc+QcYIrrMrluY8IWZ4dnD+Ti6Q8BUlZT4kPgDqcjuziYL87aO0BF9LQcWLQIiyuRrwScjlVCj1I1JOORhZXr9mxnqwrGcsaS3Hp1A6VyccNpuLEqBwOMR6wh8jR3s3n5VwJTUZ68bv3ANk5TBvuiHIbiO0LGoU4cNK0ErR49KZWwTdIxplpGhmKq9ejZwb3ANhec3BrQQLksvFVMdjIILqykQrVd4AU8B5VmOgolRK1kVyOrhWet2p3zunJHp3kgkv8PluduNbATQmAQOG+BQ8sj0FSebMCVO+2dvnd+n6KIcya7yAvmgmCHYyWCwM8SbaFOA5Ty4iimlkLKJD6hgQU01wv3QnfUkKSuw18FI0M/1HGGLDTBvOoLff9GcYfYZhccF2rypyvl8C6vsZPQGY8Nvd2Otk6ZQ+FkRXtg8JikAOSjguXhFnRFOW2v3dXelLY=
+  app: powerful-anchorage-29131
+  on:
+    repo: sh9189/peepchat
