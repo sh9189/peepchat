@@ -1,0 +1,12 @@
+<div class="card-content">
+  {{#if title}}
+    <span class="card-title">{{title}}</span>
+  {{/if}}
+  {{yield}}
+</div>
+<div class="card-action right-align">
+  <button disabled={{buttonDisabled}} class="btn-flat {{if buttonDisabled "disabled" "green white-text"}}"
+    {{action "buttonClicked"}}>
+    {{buttonText}}
+  </button>
+</div>
